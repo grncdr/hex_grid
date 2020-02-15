@@ -1,3 +1,6 @@
+#[cfg(feature = "serde")]
+extern crate serde;
+
 pub mod offset;
 pub mod coordinate;
 mod hex_size;
