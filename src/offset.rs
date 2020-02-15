@@ -11,6 +11,7 @@ pub const DOWN_RIGHT: Offset = Offset { x: 0, y: 1 };
 pub const DOWN_LEFT: Offset = Offset { x: -1, y: 1 };
 
 #[derive(Hash, Eq, PartialEq, Copy, Clone, Debug)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct Offset {
 	pub x: i32,
 	pub y: i32,
