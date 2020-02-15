@@ -1,4 +1,5 @@
 # Hex Grid
+
 [![Build Status](https://travis-ci.org/fuchsnj/hex_grid.svg?branch=master)](https://travis-ci.org/fuchsnj/hex_grid)
 [![crates.io](https://img.shields.io/crates/v/pubsub.svg)](https://crates.io/crates/hex_grid)
 
@@ -45,4 +46,15 @@ for coord in coords {
 //get the tile that is to the right 2 tiles from the center tile
 let tile:Option<CustomData> = grid.get(CENTER + RIGHT*2);
 
+```
+
+## Serialization
+
+This library supports serialization of it's `Coordinate` and `Offset` types
+through [serde](https://serde.rs). To enable serialization add the "serde"
+feature to the dependency section in your `Cargo.toml`:
+
+```toml
+[dependencies]
+hex_grid = { version = "*", features = ["serde"] }
 ```

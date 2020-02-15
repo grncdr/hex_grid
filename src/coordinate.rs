@@ -1,5 +1,8 @@
 use std::ops::{Add, Sub, Neg};
 
+#[cfg(feature = "serde")]
+use serde::{Serialize, Deserialize};
+
 pub use super::offset::*;
 use PixelOrientation;
 use HexSize;
@@ -7,6 +10,7 @@ use HexSize;
 pub const CENTER: Coordinate = Coordinate { x: 0, y: 0 };
 
 #[derive(Hash, Eq, PartialEq, Copy, Clone, Debug)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct Coordinate {
     pub x: i32,
     pub y: i32,

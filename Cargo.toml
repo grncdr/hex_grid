@@ -10,3 +10,4 @@ A library to easily work with 2d hex grids of arbitrary shapes
 """
 
 [dependencies]
+serde = { version = "1.0", optional = true, features = ["derive"] }

@@ -1,5 +1,9 @@
 use std::i32;
 use std::ops::{Add, Mul, Neg, Sub};
+
+#[cfg(feature = "serde")]
+use serde::{Serialize, Deserialize};
+
 use super::Coordinate;
 
 pub const ZERO_OFFSET: Offset = Offset { x: 0, y: 0 };
@@ -11,6 +15,7 @@ pub const DOWN_RIGHT: Offset = Offset { x: 0, y: 1 };
 pub const DOWN_LEFT: Offset = Offset { x: -1, y: 1 };
 
 #[derive(Hash, Eq, PartialEq, Copy, Clone, Debug)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct Offset {
 	pub x: i32,
 	pub y: i32,
